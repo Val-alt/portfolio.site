@@ -1,0 +1,78 @@
+.nav {
+  display: flex;
+  justify-content: flex-end;
+
+  &::after {
+    content: "";
+    width: 5px;
+    height: 50px;
+    top: 0px;
+    left: 50px;
+    background-color: $bg-color-first;
+    position: absolute;
+    z-index: 20;
+
+    @media screen and (max-width: 1084px) {
+      height: 32px;
+      left: 32px;
+    }
+
+    @media screen and (max-width: 615px) {
+      display: none;
+    }
+  }
+
+  &::before {
+    content: "";
+    height: 5px;
+    top: 50px;
+    left: 50px;
+    // right: 110px;
+    right: 0px;
+    background-color: $color-line;
+    position: absolute;
+
+    animation: showLine .7s 1 ease-in-out;
+
+    @media screen and (max-width: 1084px) {
+      top: 32px;
+      left: 32px;
+    }
+
+    @media screen and (max-width: 615px) {
+      display: none;
+    }
+  }
+}
+
+.btn__nav {
+  display: none;
+  margin-top: 28px;
+  margin-right: 50px;
+  z-index: 20;
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  // color: $bg-color-h1;
+  padding: 0;
+}
+
+.nav__list {
+    display: none;
+    position: absolute;
+    background-color: $bg-color-first;
+    z-index: 50;
+    top: 60px;
+    right: 60px;
+    list-style: none;
+    // border-bottom: 3px solid $bg-color-h1;
+    // border-left: 3px solid $bg-color-h1;
+    padding: 40px;
+}
+
+.nav__item {
+    padding: 5px 0;
+    text-decoration: none;
+}

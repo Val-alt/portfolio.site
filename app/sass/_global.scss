@@ -1,0 +1,224 @@
+$bg-color-first: #fdfdfd;
+$bg-color-second: #f2f0f0;
+$bg-color-title: #2d7dfd;
+$color-title: #181b6a;
+$color-line: #a9c9fc;
+
+a {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+body {
+  background: linear-gradient(
+    to bottom,
+    $bg-color-first 240px,
+    $bg-color-second 0%
+  );
+  padding-left: 300px;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  position: relative;
+  font-size: 16px;
+  color: #252525;
+  overflow-x: hidden;
+  padding-bottom: 70px;
+
+  @media screen and (max-width: 1430px) {
+    padding-left: 200px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding-left: 130px;
+  }
+
+  @media screen and (max-width: 940px) {
+    padding-bottom: 30px;
+  }
+
+  @media screen and (max-width: 615px) {
+    padding-left: 30px;
+  }
+
+  @media screen and (max-width: 500px) {
+    background: linear-gradient(
+      to bottom,
+      $bg-color-first 180px,
+      $bg-color-second 0%
+    );
+  }
+}
+
+.links {
+  position: fixed;
+  left: 36px;
+  top: 100px;
+
+  animation: showLine .7s 1 ease-in-out;
+
+  @media screen and (max-width: 1024px) {
+    left: 20px;
+  }
+
+  @media screen and (max-width: 615px) {
+    right: 40px;
+    left: auto;
+    top: 10px;
+    z-index: 900;
+    background-color: $bg-color-first;
+    box-shadow: 0 0 12px 10px $bg-color-first;
+    animation-duration:.4s;
+  }
+
+  & a {
+    display: block;
+    color: $bg-color-title;
+    margin: 30px 0;
+
+    @media screen and (max-width: 615px) {
+      display: inline-block;
+      margin: 0 5px;
+    }
+
+    &:hover {
+      animation: colorLink 0.5s 1 ease;
+    }
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    width: 5px;
+    background-color: $color-line;
+    position: fixed;
+    left: 50px;
+
+    @media screen and (max-width: 1024px) {
+      left: 32px;
+    }
+
+    @media screen and (max-width: 615px) {
+      left: auto;
+    }
+  }
+
+  &::before {
+    height: 95px;
+    top: 0px;
+
+    @media screen and (max-width: 615px) {
+      top: 23px;
+      right: 225px;
+      height: 5px;
+      width: 100%;
+    }
+  }
+
+  &::after {
+    height: 100%;
+    top: 385px;
+
+    @media screen and (max-width: 615px) {
+      top: 23px;
+      right: 0px;
+      height: 5px;
+      width: 33px;
+    }
+  }
+}
+
+.title {
+  display: block;
+  width: 300px;
+  height: 300px;
+  background-color: $bg-color-title;
+  margin: 0;
+  color: $color-title;
+  position: relative;
+  margin-top: 112px;
+
+  animation: showTop 1s 1 ease-in-out;
+
+  @media screen and (max-width: 1024px) {
+    width: 240px;
+    height: 240px;
+    margin-top: 80px;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 180px;
+    height: 180px;
+    animation: none;
+  }
+
+  &::after,
+  &::before {
+    position: absolute;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 73px;
+    left: 50px;
+
+    @media screen and (max-width: 1024px) {
+      font-size: 50px;
+      left: 30px;
+    }
+
+    @media screen and (max-width: 500px) {
+      font-size: 38px;
+      left: 15px;
+    }
+  }
+
+  &::before {
+    content: "Val";
+    top: 29px;
+
+    @media screen and (max-width: 1024px) {
+      top: 20px;
+    }
+
+    @media screen and (max-width: 500px) {
+      top: 10px;
+    }
+  }
+
+  &::after {
+    content: "Alt";
+    top: 92px;
+    letter-spacing: 6px;
+
+    @media screen and (max-width: 1024px) {
+      top: 64px;
+      letter-spacing: 4px;
+    }
+
+    @media screen and (max-width: 500px) {
+      top: 40px;
+      letter-spacing: 3px;
+    }
+  }
+}
+
+.title__name {
+  position: absolute;
+  top: 184px;
+  left: 150px;
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 500;
+  animation: showTitle 1s 1 ease-in-out;
+
+  @media screen and (max-width: 1024px) {
+    top: 141px;
+    left: 125px;
+    font-size: 36px;
+  }
+
+  @media screen and (max-width: 500px) {
+    top: 89px;
+    left: 87px;
+    font-size: 24px;
+    animation: none;
+  }
+}
